@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>Junyuan's Homepage</title><meta name="author" content="Junyuan Lu(陆俊元)"><link rel="shortcut icon" href="/img/favicon_zju.png"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><meta name="generator" content="Hexo 6.3.0"></head><body><header id="page_header"><div class="header_wrap"><div id="blog_name"><a class="blog_title" id="site-name" href="/">Junyuan's Homepage</a></div><button class="menus_icon"><div class="navicon"></div></button><ul class="menus_items"><li class="menus_item"><a class="site-page" href="/#About-me"> About</a></li><li class="menus_item"><a class="site-page" href="/Publications/"> Publications</a></li><li class="menus_item"><a class="site-page" href="/Projects/"> Projects</a></li></ul><!-- Google tag (gtag.js)--><script type="text/javascript" async src="https://www.googletagmanager.com/gtag/js?id=G-VFQXJ5H7X2"></script><script type="text/javascript">window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-VFQXJ5H7X2');</script></div></header><main id="page_main"><div class="side-card sticky"><div class="card-wrap" itemscope itemtype="http://schema.org/Person"><div class="author-avatar"><img class="avatar-img" src="/img/touxiang.JPG" onerror="this.onerror=null;this.src='/img/touxiang.JPG'" alt="avatar"></div><div class="author-discrip"><h3>Junyuan Lu(陆俊元)</h3><p class="author-bio">MPhil student at ZJU Intelligent Autonomous Systems Lab</p></div><div class="author-links"><button class="btn m-social-links">Links</button><ul class="social-links"><li><a class="e-social-link" href="https://scholar.google.com.hk/citations?user=-Vsr3WIAAAAJ&amp;hl=zh-CN" target="_blank"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>Google Scholar</span></a></li><li><a class="e-social-link" href="https://github.com/ljy-zju" target="_blank"><i class="fab fa-github" aria-hidden="true"></i><span>Github</span></a></li><li><a class="e-social-link" href="https://orcid.org/0000-0001-5559-2259" target="_blank"><i class="fab fa-orcid" aria-hidden="true"></i><span>ORCID</span></a></li><li><a class="e-social-link" href="mailto:[junyl@zju.edu.cn]" target="_blank"><i class="fas fa-envelope" aria-hidden="true"></i><span>E-mail</span></a></li></ul></div></div></div><div class="page" itemscope itemtype="http://schema.org/CreativeWork"><h2 class="page-title">论文简介——Tac2Structure: Object Surface Reconstruction Only Through Multi Times Touch</h2><article><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>&emsp;&emsp;机械臂末端执行器与未知被操纵物体接触时，外部视觉观测难免存在遮挡，机械臂还能准确感知物体吗？<br><strong>​IASLAB</strong>的最新研究<strong>Tac2Structure</strong>给出了非常肯定的答案。受人类能<strong>仅凭触觉</strong>感知未知物体表面纹理的能力的启发，<strong>触觉</strong>在机器人探索环境中发挥着至关重要的作用，特别是在视觉难以应用或不可避免的遮挡的场景中。</p>
+<center><img src="img/1.png" alt="1" style="zoom: 30%;" />
+
+<p><strong>图1. Tac2Structure 算法.</strong> <br>这项工作解决了利用视触觉传感器高精度重建物体表面的问题。<br>在不依赖任何外部设备的情况下，可以仅通过多次触摸就能低误差地重建未知物体的表面。</center></p>
+<p>&emsp;&emsp;据我们所知，这项工作是<strong>第一个</strong>在不依赖外部观测设备的情况下实现物体表面低漂移重建的工作。 如<strong>图1</strong>所示，该算法可以为机器人提供准确的接触物体表面纹理信息。 它可以增强机器人对未知物体的认知能力，提高机器人在陌生场景或有视觉遮挡的场景中执行任务的鲁棒性。 总的来说，所提出的算法有以下贡献：</p>
+<ul>
+<li>自我运动估计：可以准确估计传感器的自我运动，而不依赖于其他外部传感器提供的准确观测。</li>
+<li>压力自适应：可以克服传感器精度受采样压力影响的固有缺点。</li>
+<li>低漂移全局重建：可以减少累积误差，达到毫米级精度。</li>
+</ul>
+<h2 id="研究背景"><a href="#研究背景" class="headerlink" title="研究背景"></a>研究背景</h2><p>&emsp;&emsp;目前，机器人完成操作任务强烈依靠被操纵对象的准确信息。通常情况下，视觉信息足以在大多数场景下满足感知、跟踪或识别等需求。然而，视觉方法仍然具有许多缺陷，诸如欠精细和易遮挡。常用的深度相机通常只有厘米级别准确度的深度测量精度，且在机器人操作任务中，当机器人与物体发生实际接触时，遮挡又是不可避免的。为了解决这些问题，一种<strong>新型的基于图像的触觉传感器</strong>常被添加至机械臂的末端来感知接触物体的几何形状。该传感器可以精细地感知接触表面的纹理并输出高分辨率图像，可以使用光度立体算法将其图像转换为 3D 点云。</p>
+<p>&emsp;&emsp;<strong>受到人类阅读盲文的启发</strong>，通过多次触摸即可将各种信息组合在一起，机器人也可以使用点云配准算法，融合多帧点云，并重建物体的表面。然而，目前大多数研究都是通过外部设备、获得传感器的位姿变换来提高融合精度，严重限制了应用场景。 由于采样压力的影响，特征匹配得到的重建纹理在深度上缺乏一致性，容易产生断裂面、不均匀的现象，导致重建精度显着降低。 此外，在对尺度至少为传感器有效采样面积十倍的大尺寸物体表面进行重建时，多帧融合产生的累积误差往往难以接受，严重影响精度。</p>
+<p>&emsp;&emsp;为此，我们提出了一种名为<strong>Tac2Structure</strong>的新颖框架，用于仅基于视触觉传感器同时进行传感器定位和物体表面重建。 </p>
+<h2 id="实验方法"><a href="#实验方法" class="headerlink" title="实验方法"></a>实验方法</h2><p>&emsp;&emsp;首先，我们使用<strong>点云配准算法</strong>来估计传感器在多采样帧之间的位姿变换，使得全局重建过程不依赖于外部设备。 其次，提出了<strong>自适应压力校正算法</strong>，增强帧间深度的一致性，降低实际采样操作的难度。 最后，利用基于深度学习的<strong>闭环检测</strong>方法和<strong>位姿图优化算法</strong>来减少累积误差，提高准确率。</p>
+<center><img src="img/2.png" alt="1" style="zoom: 100%;" />
+
+<p><strong>图2. Tac2Structure 框架。</strong> <br>为了重建物体的表面，我们设计了一个包含三个模块的系统：<br><font color=blue>1）局部触觉地图构建，</font><font color=green>2）压力校正，</font><font color=orange>3）全局触觉地图构建。</font> <br>最后，我们可以获得表面重建结果和每个采样帧的传感器位姿。</p>
+</center>
+
+<p>&emsp;&emsp;所提出的重建框架如<strong>图2</strong>所示。通过接收来自触觉传感器的多帧输入，我们的框架可以准确估计传感器的自我运动并以低漂移重建物体表面。 我们的框架由三个关键子模型组成。</p>
+<ul>
+<li><font color=blue>局部触觉图构建：</font>在该模块中，给定触觉图像，输出其相应的局部触觉图，表示局部接触区域的三维形状。 我们使用多层感知器（MLP）模型和二维泊松求解器来实现这一功能。我们提供了一个实用的工具箱来提高训练数据集标注的效率，详见<a target="_blank" rel="noopener" href="https://github.com/ljy-zju/Tac2Structure.git">网页</a>。 </li>
+<li><font color=green>自适应压力矫正：</font>在该模块中，我们根据统计方法减轻手动按压带来的压力不一致。 对由压力不一致引起的深度误差进行解释并依次提出自适应校正算法。</li>
+<li><font color=orange>全局触觉图构建：</font>在该模块中，给定一系列校正后的局部触觉图，我们使用点云配准算法、基于深度学习的闭环检测算法和位姿图优化技术来重建全局触觉图。</li>
+</ul>
+<center><img src="img\image-20231015163725716.png" alt="image-20231015163725716" style="zoom:33%;" />
+
+<hr>
+<img src="img\image-20231015163707545.png" alt="image-20231015163707545" style="zoom:33%;" />
+
+<hr>
+<p><img src="img\image-20231015163635514.png" alt="image-20231015163635514" style="zoom:33%;" /></center></p>
+<hr>
+<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><p>&emsp;&emsp;首先是局部触觉重建，如图所示，我们可视化了 “ZJU” 3D打印件的一些局部触觉地图。从左到右分别是视觉图像、触觉图像、局部触觉地图。</p>
+<center><img src="img\image-20231015163826578.png" alt="image-20231015163826578" style="zoom:44%;" /></center>
+
+<hr>
+<p>&emsp;&emsp;其次是压力矫正算法，如图所示，我们可视化了压力校正前后全局触觉地图构建结果。 从左到右分别是3D打印的‘ALLCCT’和‘龙凤’的重建结果的前视图、侧视图和顶视图（有\没有压力校正）。所提出的深度校正算法显著改善了重建模型的视觉效果。</p>
+<center><img src="img\image-20231015163839792.png" alt="image-20231015163839792" style="zoom:44%;" /></center>
+
+<hr>
+<p>&emsp;&emsp;然后是回环检测算法，如图所示，我们可视化了误报闭环检测结果的消除过程。 从左到右分别是基于CNN的原始检测结果（保留余弦相似度排名前20%）、去除太近的候选帧后的结果、进一步去除太远的候选帧后的最终结果。</p>
+<center><img src="img\image-20231015163859591.png" alt="image-20231015163859591" style="zoom:44%;" /></center>
+
+<hr>
+<p>&emsp;&emsp;然后是位姿图优化算法，如图所示，我们可视化了 <strong>Tac2Structure</strong>和 <strong>Tac2Structure(无位姿图优化)</strong> 的全局触觉地图重建结果。 从左到右分别是“龙凤”和“盘龙”3D打印件全局触觉重建结果的前视图、侧视图和改进区域特写。位姿图优化技术显着降低了重建的累积误差，且同时适用于平面和非平面物体。</p>
+<center><img src="img\image-20231015163913320.png" alt="image-20231015163913320" style="zoom:33%;" /></center>
+
+<p>&emsp;&emsp;表格显示，位姿图优化后，所有性能均有所提高，表明位姿图优化算法的有效性。实验结果验证了我们的<strong>Tac2Structure</strong>框架中位姿图优化技术的必要性和有效性，可以减少累积误差并提高全局重建的准确性。</p>
+<center><img src="img\image-20231015165044664.png" alt="image-20231015165044664" style="zoom:33%;" /></center>
+
+<hr>
+<p>&emsp;&emsp;最后是消融实验，表格显示，深度校正算法可以显著提高平坦度。 相比之下，位姿图优化算法可以减少里程计的累积误差，减小RPE。将两种算法结合起来可以减少重建结果与CAD模型之间的偏差，表明整个算法系统可以以<strong>毫米级的精度</strong>重建物体表面。</p>
+<center><img src="img\image-20231015165409932.png" alt="image-20231015165409932" style="zoom:33%;" /></center>
+
+<hr>
+<p>&emsp;&emsp;更多Demo参见<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1cY411U7gh/?share_source=copy_web&vd_source=929c182f001ab10dc1492735a150aad2">视频链接</a>。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>&emsp;&emsp;我们提出了一种低累计误差框架 <strong>Tac2Structure</strong>，用于仅依赖基于图像的触觉传感器进行大型物体的表面重建。 我们的<a target="_blank" rel="noopener" href="https://github.com/ljy-zju/Tac2Structure.git"><strong>工具箱</strong></a>有助于高效地完成训练数据集的注释。 使用经过训练的 MLP 模型和快速泊松解算器，可以将触觉图像准确地转换为局部触觉图。 通过联合使用自适应压力校正算法和点云配准算法，我们的方法构建了物体的全局触觉图。 我们使用基于深度学习的闭环检测算法和位姿图优化算法进行大规模物体表面重建，以减少累积误差和漂移。 <strong>总的来说，在不需要额外的观测设备的情况下，我们的框架可以达到毫米级别的重建精度，且整体操作过程更简单，成本更便宜，适用于更广泛的应用场景。</strong></p>
+</article></div></main><div class="nav-wrap"><div class="nav"><button class="site-nav"><div class="navicon"></div></button><ul class="nav_items"><li class="nav_item"><a class="nav-page" href="/#About-me"> About</a></li><li class="nav_item"><a class="nav-page" href="/Publications/"> Publications</a></li><li class="nav_item"><a class="nav-page" href="/Projects/"> Projects</a></li></ul></div><div class="cd-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></div></div><footer id="page_footer"><div class="footer_wrap"><div class="copyright">&copy;2023 by Junyuan Lu(陆俊元)</div><div class="theme-info">Powered by <a target="_blank" href="https://hexo.io" rel="nofollow noopener">Hexo</a> & <a target="_blank" href="https://github.com/PhosphorW/hexo-theme-academia" rel="nofollow noopener">Academia Theme</a></div><!-- 不蒜子统计--><span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span></span><span class="post-meta-divider">|</span><span id="busuanzi_container_site_uv" style="display:none">本站访客数<span id="busuanzi_value_site_uv"></span></span><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery-pjax@latest/jquery.pjax.min.js"></script><script src="/js/main.js"></script><script src="//clustrmaps.com/map_v2.js?d=gO9Ee5geOQJr4A8o_oWFrvEhrFzUuwpnDv6pPrVbx8U&amp;cl=ffffff&amp;w=a"></script></body></html>

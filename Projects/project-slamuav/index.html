@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>Junyuan's Homepage</title><meta name="author" content="Junyuan Lu(陆俊元)"><link rel="shortcut icon" href="/img/favicon_zju.png"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><meta name="generator" content="Hexo 6.3.0"></head><body><header id="page_header"><div class="header_wrap"><div id="blog_name"><a class="blog_title" id="site-name" href="/">Junyuan's Homepage</a></div><button class="menus_icon"><div class="navicon"></div></button><ul class="menus_items"><li class="menus_item"><a class="site-page" href="/#About-me"> About</a></li><li class="menus_item"><a class="site-page" href="/Publications/"> Publications</a></li><li class="menus_item"><a class="site-page" href="/Projects/"> Projects</a></li></ul><!-- Google tag (gtag.js)--><script type="text/javascript" async src="https://www.googletagmanager.com/gtag/js?id=G-VFQXJ5H7X2"></script><script type="text/javascript">window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-VFQXJ5H7X2');</script></div></header><main id="page_main"><div class="side-card sticky"><div class="card-wrap" itemscope itemtype="http://schema.org/Person"><div class="author-avatar"><img class="avatar-img" src="/img/touxiang.JPG" onerror="this.onerror=null;this.src='/img/touxiang.JPG'" alt="avatar"></div><div class="author-discrip"><h3>Junyuan Lu(陆俊元)</h3><p class="author-bio">MPhil student at ZJU Intelligent Autonomous Systems Lab</p></div><div class="author-links"><button class="btn m-social-links">Links</button><ul class="social-links"><li><a class="e-social-link" href="https://scholar.google.com.hk/citations?user=-Vsr3WIAAAAJ&amp;hl=zh-CN" target="_blank"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>Google Scholar</span></a></li><li><a class="e-social-link" href="https://github.com/ljy-zju" target="_blank"><i class="fab fa-github" aria-hidden="true"></i><span>Github</span></a></li><li><a class="e-social-link" href="https://orcid.org/0000-0001-5559-2259" target="_blank"><i class="fab fa-orcid" aria-hidden="true"></i><span>ORCID</span></a></li><li><a class="e-social-link" href="mailto:[junyl@zju.edu.cn]" target="_blank"><i class="fas fa-envelope" aria-hidden="true"></i><span>E-mail</span></a></li></ul></div></div></div><div class="page" itemscope itemtype="http://schema.org/CreativeWork"><h2 class="page-title">项目简介——基于SLAM的无人机自主巡检技术</h2><article><h2 id="一、项目主要特征"><a href="#一、项目主要特征" class="headerlink" title="一、项目主要特征"></a>一、项目主要特征</h2><ul>
+<li><p>所完成的基于SLAM的无人机能够实现在无GPS信号地区导航定位精度<strong>20cm</strong>，姿态精度小于<strong>2度</strong>，续航时间超过<strong>10分钟</strong>。</p>
+</li>
+<li><p>研究成果可拓展无人机应用场景，可在室内变电站、电缆沟等<strong>密闭、无GPS信号和电磁干扰</strong>环境下实现自主飞行。</p>
+</li>
+<li><p>具有<strong>成熟便捷</strong>的工作流程（建图-&gt;生成路径-&gt;自动巡检）、<strong>鲁棒</strong>的运行效果（先验地图辅助定位）以及<strong>完备</strong>的预警措施（定位、规划耦合异常定位检测及处理）。</p>
+</li>
+</ul>
+<h2 id="二、项目内容"><a href="#二、项目内容" class="headerlink" title="二、项目内容"></a>二、项目内容</h2><h3 id="1-无人机外形"><a href="#1-无人机外形" class="headerlink" title="1.无人机外形"></a>1.无人机外形</h3><center>
+<img src="index.assets/无人机外形.png" alt="无人机外形" style="zoom:30%;" />
+
+<p><strong>图1. 无人机外形及组件说明</strong></p>
+</center>
+
+<p>&emsp;&emsp;本次项目选用<a target="_blank" rel="noopener" href="https://wiki.amovlab.com/public/prometheuswiki/P450%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/%E7%A1%AC%E4%BB%B6%E4%BB%8B%E7%BB%8D.html">AMOV-LAB的P450无人机</a>为原型机进行后续的二次开发。</p>
+<p>&emsp;&emsp;无人机顶部加装了 <strong>Livox-Mid360雷达</strong> 用于感知环境几何信息，四周加装了自主设计的 <strong>桨叶保护装置</strong> 用于避免炸机对无人机和工业现场造成损失。</p>
+<p>&emsp;&emsp;此外，无人机飞控上粘贴包覆了数层 <strong>铝箔</strong> ，用于屏蔽工业现场所存在的交变电场、磁场。</p>
+<h3 id="2-系统算法框架"><a href="#2-系统算法框架" class="headerlink" title="2. 系统算法框架"></a>2. 系统算法框架</h3><h4 id="2-1-运行时算法框架"><a href="#2-1-运行时算法框架" class="headerlink" title="2.1 运行时算法框架"></a>2.1 运行时算法框架</h4><center>
+<img src="index.assets/算法流程图.png" alt="算法流程图" style="zoom:30%;" />
+</center>
+&emsp;&emsp;现场运行时，用户按下交互界面的一键启动按钮后，解锁遥控器，无人机随即原地上升至设定高度，随后开始按照预设路径（3D）进行巡检，抵达路径终点后，将自动降落、上锁。飞行过程中会全程录制FPV相机数据。
+
+
+
+<h4 id="2-2-运行前构建先验地图："><a href="#2-2-运行前构建先验地图：" class="headerlink" title="2.2 运行前构建先验地图："></a>2.2 运行前构建先验地图：</h4><center>
+<img src="index.assets/构建先验地图.png" alt="构建先验地图" style="zoom:30%;" />
+</center>
+&emsp;&emsp;在新场地运行时，需要先构建场地的点云地图。由于是离线制作地图，可以以较慢的速度手持无人机行进，采集高分辨率Livox点云，直到覆盖整个场地。得到数据后，由DLO完成先验地图的生成，再使用CloudCompare进行滤波及降采样，得到最终的先验地图。
+
+
+
+<h4 id="2-3-运行前构建生成预设路径："><a href="#2-3-运行前构建生成预设路径：" class="headerlink" title="2.3 运行前构建生成预设路径："></a>2.3 运行前构建生成预设路径：</h4><center>
+<img src="index.assets/生成预设路径.png" alt="生成预设路径" style="zoom:30%;" />
+</center>
+&emsp;&emsp;获取先验地图后，需要预设无人机巡检轨迹；可以先手持无人机行进，录制一段Livox点云，然后通过定位模块算法得到准确的定位序列，导入开发的航点生成器生成离散航点，再导入开发的航点可视化微调工具箱，观察航点在先验地图中的位置并结合需求微调航点位置，最终保存，得到预设路线。
+
+<h2 id="三、参考链接"><a href="#三、参考链接" class="headerlink" title="三、参考链接"></a>三、参考链接</h2><p>&emsp;&emsp;[1] <a target="_blank" rel="noopener" href="https://wiki.amovlab.com/public/prometheuswiki/P450%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/%E7%A1%AC%E4%BB%B6%E4%BB%8B%E7%BB%8D.html">硬件介绍-P系列无人机文档</a> </p>
+<p>&emsp;&emsp;[2] <a target="_blank" rel="noopener" href="https://github.com/vectr-ucla/direct_lidar_odometry">DLO算法</a></p>
+<p>&emsp;&emsp;[3] <a target="_blank" rel="noopener" href="https://github.com/koide3/hdl_localization">HDL-localization算法</a></p>
+<p>&emsp;&emsp;[4] <a target="_blank" rel="noopener" href="https://github.com/ZJU-FAST-Lab/ego-planner-swarm">Ego-planner算法</a></p>
+</article></div></main><div class="nav-wrap"><div class="nav"><button class="site-nav"><div class="navicon"></div></button><ul class="nav_items"><li class="nav_item"><a class="nav-page" href="/#About-me"> About</a></li><li class="nav_item"><a class="nav-page" href="/Publications/"> Publications</a></li><li class="nav_item"><a class="nav-page" href="/Projects/"> Projects</a></li></ul></div><div class="cd-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></div></div><footer id="page_footer"><div class="footer_wrap"><div class="copyright">&copy;2023 by Junyuan Lu(陆俊元)</div><div class="theme-info">Powered by <a target="_blank" href="https://hexo.io" rel="nofollow noopener">Hexo</a> & <a target="_blank" href="https://github.com/PhosphorW/hexo-theme-academia" rel="nofollow noopener">Academia Theme</a></div><!-- 不蒜子统计--><span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span></span><span class="post-meta-divider">|</span><span id="busuanzi_container_site_uv" style="display:none">本站访客数<span id="busuanzi_value_site_uv"></span></span><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery-pjax@latest/jquery.pjax.min.js"></script><script src="/js/main.js"></script><script src="//clustrmaps.com/map_v2.js?d=gO9Ee5geOQJr4A8o_oWFrvEhrFzUuwpnDv6pPrVbx8U&amp;cl=ffffff&amp;w=a"></script></body></html>
