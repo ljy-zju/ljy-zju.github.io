@@ -5,6 +5,26 @@ div.page a {
 }
 .fab.fa-zhihu {
   color: #1772f6;
+  zoom: 90%;
+}
+.fab.fa-weixin {
+  color: #2ba245;
+  zoom: 90%;
+}
+.fa-envelope {
+  color: #167ab6;
+}
+.fab.fa-orcid {
+  color: #a6ce39;
+  zoom: 98%;
+}
+.fab.fa-github-square {
+  color: #000;
+  zoom: 110%;
+}
+.fas.fa-graduation-cap {
+  color: #4185f4;
+  zoom: 85%;
 }
 .modal {
   display: none; /* 默认隐藏 */
