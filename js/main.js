@@ -70,7 +70,7 @@ $(function () {
         'pjax:click': function() {
             $('body,html').animate({
                 // scrollTop: 0,
-            }, 500);
+            }, 1000);
         },
         'pjax:end': function() {
             if ($(".header_wrap").hasClass("menus-open")) {
@@ -90,15 +90,15 @@ $(function () {
                 if (target.length) {
                     $('html, body').animate({
                         scrollTop: target.offset().top
-                    }, 500, function () {
+                    }, 1000, function () {
                         // 添加高亮效果并逐渐变亮
                         // target.addClass('highlight-effect');
-                        target.css('animation', 'fadeIn 1s ease-in-out');
+                        target.css('animation', 'fadeIn 2s ease-in-out');
     
                         // 使用动画逐渐变浅并移除高亮效果
                         setTimeout(function () {
-                            target.css('animation', 'fadeOut 1s ease-in-out');
-                        }, 1000); // 调整延迟时间（以毫秒为单位）
+                            target.css('animation', 'fadeOut 2s ease-in-out');
+                        }, 2000); // 调整延迟时间（以毫秒为单位）
                     });
                 }
             } 
