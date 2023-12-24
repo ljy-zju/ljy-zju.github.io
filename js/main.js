@@ -64,13 +64,13 @@ $(function () {
     // pjax
     $(document).pjax('a[target!=_blank]','.page', {
         fragment: '.page',
-        timeout: 5000
+        timeout: 5000,
     });
     $(document).on({
         'pjax:click': function() {
             $('body,html').animate({
-                scrollTop: 0,
-            }, 700);
+                // scrollTop: 0,
+            }, 500);
         },
         'pjax:end': function() {
             if ($(".header_wrap").hasClass("menus-open")) {
@@ -82,23 +82,70 @@ $(function () {
             if ($(".nav").hasClass("nav-open")) {
                 $(".nav").removeClass("nav-open").addClass("nav-close")
             }
+
+            // 检查URL中的锚点
+            if (window.location.hash) {
+                var hash = window.location.hash;
+                var target = $(hash);
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 500, function () {
+                        // 添加高亮效果并逐渐变亮
+                        // target.addClass('highlight-effect');
+                        target.css('animation', 'fadeIn 1s ease-in-out');
+    
+                        // 使用动画逐渐变浅并移除高亮效果
+                        setTimeout(function () {
+                            target.css('animation', 'fadeOut 1s ease-in-out');
+                        }, 1000); // 调整延迟时间（以毫秒为单位）
+                    });
+                }
+            } 
         }
     });
 
-    // smooth scroll
-    $(function () {
-        $('a[href*=\\#]:not([href=\\#])').click(function () {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 700);
-                    return false;
-                }
-            }
-        });
-    });
+    // // smooth scroll
+    // $(function () {
+    //     $('a[href*=\\#]:not([href=\\#])').click(function () {
+    //         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    //             var target = $(this.hash);
+    //             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+    //             if (target.length) {
+    //                 $('html,body').animate({
+    //                     scrollTop: target.offset().top
+    //                 }, 700);
+    //                 return false;
+    //             }
+    //         }
+    //     });
+    // });
+    // smooth scroll with highlight and fade effect
+    
+// smooth scroll with highlight and fade effect
+// smooth scroll with highlight and fade effect
+$(function () {
+    $('a[href*=\\#]:not([href=\\#])').click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                // 平滑滚动
+                $('html,body').animate({
+                    scrollTop: target.offset().top
+                }, 700, function () {
+                    // 添加高亮效果并逐渐变亮
+                    // target.addClass('highlight-effect');
+                    target.css('animation', 'fadeIn 1s ease-in-out');
 
+                    // 使用动画逐渐变浅并移除高亮效果
+                    setTimeout(function () {
+                        target.css('animation', 'fadeOut 1s ease-in-out');
+                    }, 1000); // 调整延迟时间（以毫秒为单位）
+                });
+                return false;
+            }
+        }
+    });
+});
 })

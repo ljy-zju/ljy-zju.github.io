@@ -988,3 +988,74 @@ blockquote p {
 ::-webkit-scrollbar-thumb {
   background-color: rgba(122,130,136,0.4);
 }
+.highlight-effect {
+  background-color: #ff0;
+  transition: background-color 2s ease-in-out;
+}
+.highlight-effect.fade-out {
+  background-color: transparent;
+}
+@-moz-keyframes fadeIn {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: #ff0;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: #ff0;
+  }
+}
+@-o-keyframes fadeIn {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: #ff0;
+  }
+}
+@keyframes fadeIn {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: #ff0;
+  }
+}
+@-moz-keyframes fadeOut {
+  from {
+    background-color: #ff0;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+@-webkit-keyframes fadeOut {
+  from {
+    background-color: #ff0;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+@-o-keyframes fadeOut {
+  from {
+    background-color: #ff0;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+@keyframes fadeOut {
+  from {
+    background-color: #ff0;
+  }
+  to {
+    background-color: transparent;
+  }
+}
