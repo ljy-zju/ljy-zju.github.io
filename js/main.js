@@ -148,4 +148,42 @@ $(function () {
         }
     });
 });
+
+$(function () {
+    // 获取模态框元素
+    var modal = document.getElementById('wechatModal');
+  
+    // 监听微信链接的点击事件
+    $(document).on('click', '.e-social-link', function(event) {
+      // 检查是否点击了微信图标
+      if ($(this).find('.fa-weixin').length > 0) {
+        event.preventDefault(); // 阻止链接默认动作
+        modal.style.display = 'block'; // 显示弹窗
+      }
+    });
+  
+    // 绑定点击事件到关闭按钮
+    $(document).on('click', '.close', function() {
+      modal.style.display = 'none'; // 隐藏弹窗
+    });
+  
+    // 点击弹窗外部区域关闭弹窗
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = 'none'; // 隐藏弹窗
+      }
+    };
+    
+    // 使用事件委托监听所有链接的点击事件
+    $(document).on('click', 'a', function(event) {
+        // 检查点击的是否为外链或微信链接
+        if (!$(this).attr('target') || $(this).attr('target') !== '_blank') {
+        if (!$(this).hasClass('e-social-link')) { // 不是微信链接
+            modal.style.display = 'none'; // 关闭弹窗
+        }
+        }
+    }); 
+  });
+  
+
 })

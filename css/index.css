@@ -3,6 +3,47 @@ div.page a {
   font-weight: bold;
   color: DeepSkyBlue !important;
 }
+.fab.fa-zhihu {
+  color: #1772f6;
+}
+.modal {
+  display: none; /* 默认隐藏 */
+  position: fixed; /* 固定定位 */
+  z-index: 1000; /* 高于其他元素 */
+  left: 0;
+  top: 0;
+  width: 100%; /* 全屏宽度 */
+  height: 60%; /* 全屏高度 */
+  overflow: auto; /* 如果需要，允许滚动 */
+  background-color: rgba(0,0,0,0.4); /* 半透明背景 */
+}
+.modal-content {
+  position: relative; /* 保持模态框在流中的位置，但允许在其中绝对定位 */
+  margin: 0% auto; /* 模态框水平居中，没有顶部边距 */
+  padding: 0px; /* 在模态框内容周围增加空间 */
+  border: 0px solid #888; /* 模态框周围添加浅灰色边框 */
+  width: 100%; /* 设置模态框宽度为屏幕宽度的百分比 */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); /* 添加阴影以产生立体效果 */
+  background: rgba(0,0,0,0); /* 设置模态框背景为白色 */
+}
+.close {
+  color: #aaa; /* 关闭按钮 'X' 使用浅灰色 */
+  position: absolute; /* 绝对定位关闭按钮到其第一个已定位的祖先元素 */
+  bottom: 0px; /* 关闭按钮位于模态框内容下方10px处 */
+  left: 50%; /* 按钮的开始位置为其容器宽度的50% */
+  transform: translateX(-50%); /* 将按钮左移半个宽度以居中 */
+  font-size: 35px; /* 设置 'X' 的字体大小 */
+  font-weight: bold; /* 使 'X' 字体加粗 */
+  background: #fff; /* 为按钮设置白色背景 */
+  border-radius: 40px; /* 按钮边角圆润 */
+  padding: 5px 40%; /* 围绕 'X' 添加填充，使其呈现按钮形状 */
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
 .page pre,
 .page .highlight {
   overflow: auto;
