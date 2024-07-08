@@ -9,7 +9,7 @@ gtag('config', 'G-VFQXJ5H7X2');</script></div></header><main id="page_main"><div
 </li>
 <li><p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0024.%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9.html">click here</a></p>
 </li>
-<li><p>给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。</p>
+<li><p>题目描述：给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。</p>
 </li>
 <li><p>思路：<br>  这道题要求两两交换，所以如果如果节点数少于两个就直接退出<br>  交换的时候，要遵循昨天总结的“先记录，再修改”的原则，特别是为了能继续遍历链表，需要先记录好next，才能修改next。</p>
 <p>  循环内部的具体的操作比较简单：拿到三个连续节点，last，<strong>cur</strong> 和 <strong>kid</strong>，<br>  交换：<strong>cur</strong> 和 <strong>kid</strong> 要交换，于此行为相配合的是这两个节点的前、后两个节点，即<br>  重指：last 的 next 要指向 kid，cur 的 next 则要指向 kid 的 下一个节点 kkid。<br>  位移：随后 last 指针向右移动两位，到 原 kid 现 cur 处，cur 指针顺延到 last 指针后一位处。<br>  循环上述交换、重指、位移操作即可。</p>
@@ -99,6 +99,6 @@ gtag('config', 'G-VFQXJ5H7X2');</script></div></header><main id="page_main"><div
 <hr>
 <ul>
 <li><a href="../../Blogs/day_three">上一篇：代码随想录算法训练营第三天 | 203. 移除链表元素、707. 设计链表、206. 反转链表</a></li>
-<li><a href="../../Blogs">下一篇：(TBA)</a></li>
+<li><a href="../../Blogs/day_six">下一篇：代码随想录算法训练营第六天 | 242. 有效的字母异位词、349. 两个数组的交集、202. 快乐数、1. 两数之和</a></li>
 </ul>
 </article></div></main><div class="nav-wrap"><div class="nav"><button class="site-nav"><div class="navicon"></div></button><ul class="nav_items"><li class="nav_item"><a class="nav-page" href="/"> About</a></li><li class="nav_item"><a class="nav-page" href="/Publications/"> Publications</a></li><li class="nav_item"><a class="nav-page" href="/Projects/"> Projects</a></li><li class="nav_item"><a class="nav-page" href="/Blogs/"> Blogs</a></li></ul></div><div class="cd-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></div></div><footer id="page_footer"><div class="footer_wrap"><div class="copyright">&copy;2024 by Junyuan Lu(陆俊元)</div><div class="theme-info">Powered by <a target="_blank" href="https://hexo.io" rel="nofollow noopener">Hexo</a> & <a target="_blank" href="https://github.com/PhosphorW/hexo-theme-academia" rel="nofollow noopener">Academia Theme</a></div><!-- 不蒜子统计--><span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span></span><span class="post-meta-divider">|</span><span id="busuanzi_container_site_uv" style="display:none">本站访客数<span id="busuanzi_value_site_uv"></span></span><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery-pjax@latest/jquery.pjax.min.js"></script><script src="/js/main.js"></script><script src="//clustrmaps.com/map_v2.js?d=gO9Ee5geOQJr4A8o_oWFrvEhrFzUuwpnDv6pPrVbx8U&amp;cl=ffffff&amp;w=a"></script></body></html>
