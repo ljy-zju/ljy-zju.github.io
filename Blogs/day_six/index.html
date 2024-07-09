@@ -9,7 +9,7 @@ gtag('config', 'G-VFQXJ5H7X2');</script></div></header><main id="page_main"><div
 </li>
 <li><p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0242.%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D.html">click here</a></p>
 </li>
-<li><p>给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的<strong>字母异位词</strong>。<br>示例 1: 输入: s &#x3D; “anagram”, t &#x3D; “nagaram” 输出: true<br>示例 2: 输入: s &#x3D; “rat”, t &#x3D; “car” 输出: false<br>说明: 你可以假设字符串只包含小写字母。</p>
+<li><p>题目描述：给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的<strong>字母异位词</strong>。<br>示例 1: 输入: s &#x3D; “anagram”, t &#x3D; “nagaram” 输出: true<br>示例 2: 输入: s &#x3D; “rat”, t &#x3D; “car” 输出: false<br>说明: 你可以假设字符串只包含小写字母。</p>
 </li>
 <li><p>思路：<br>  不仅要求字母相同，还要求相同字母出现的次数完全相同。<br>  可以把 s 以 {键，值} &#x3D; {元素，次数} 的形式，存在 unordered_map 里，<br>  然后遍历 t，检测 t 内元素是否在 unordered_map 中存在，不存在直接报错。<br>  存在则将对应 ‘值’ 减一。<br>  最后遍历 unordered_map 的所有元素，值全为0，则输出 true, 反之 false。</p>
 </li>
@@ -99,6 +99,6 @@ gtag('config', 'G-VFQXJ5H7X2');</script></div></header><main id="page_main"><div
 <hr>
 <ul>
 <li><a href="../../Blogs/day_four">上一篇：代码随想录算法训练营第四天 | 24. 两两交换链表中的节点、19. 删除链表的倒数第N个节点、面试题 02.07. 链表相交、142. 环形链表II</a></li>
-<li><a href="../../Blogs">下一篇：(TBA)</a></li>
+<li><a href="../../Blogs/day_seven">下一篇：代码随想录算法训练营第七天 | 454. 四数相加II、383. 赎金信、15. 三数之和、18. 四数之和</a></li>
 </ul>
 </article></div></main><div class="nav-wrap"><div class="nav"><button class="site-nav"><div class="navicon"></div></button><ul class="nav_items"><li class="nav_item"><a class="nav-page" href="/"> About</a></li><li class="nav_item"><a class="nav-page" href="/Publications/"> Publications</a></li><li class="nav_item"><a class="nav-page" href="/Projects/"> Projects</a></li><li class="nav_item"><a class="nav-page" href="/Blogs/"> Blogs</a></li></ul></div><div class="cd-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></div></div><footer id="page_footer"><div class="footer_wrap"><div class="copyright">&copy;2024 by Junyuan Lu(陆俊元)</div><div class="theme-info">Powered by <a target="_blank" href="https://hexo.io" rel="nofollow noopener">Hexo</a> & <a target="_blank" href="https://github.com/PhosphorW/hexo-theme-academia" rel="nofollow noopener">Academia Theme</a></div><!-- 不蒜子统计--><span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span></span><span class="post-meta-divider">|</span><span id="busuanzi_container_site_uv" style="display:none">本站访客数<span id="busuanzi_value_site_uv"></span></span><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery-pjax@latest/jquery.pjax.min.js"></script><script src="/js/main.js"></script><script src="//clustrmaps.com/map_v2.js?d=gO9Ee5geOQJr4A8o_oWFrvEhrFzUuwpnDv6pPrVbx8U&amp;cl=ffffff&amp;w=a"></script></body></html>
